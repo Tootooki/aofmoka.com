@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOFMOKA - Welcome</title>
+    <style>
+        /* Simple, clean styling */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav h1 { margin: 0; letter-spacing: 2px; font-weight: 300; }
+
+        /* Main Hero Banner */
+        .hero-banner {
+            background-color: #333; 
+            /* Placeholder Image - You can replace this URL later */
+            background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.6);
+        }
+        .hero-content {
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .hero-content h2 { font-size: 3rem; margin: 0 0 15px 0; }
+        .hero-content button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .hero-content button:hover { background-color: #e03e00; }
+
+        /* Banner Grid */
+        .banner-grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        .small-banner {
+            flex: 1 1 300px; /* Responsive flex */
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .small-banner:hover { transform: translateY(-5px); }
+
+        /* Placeholder Colors for Small Banners */
+        .banner-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80'); }
+        .banner-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80'); }
+        .banner-3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1558655146-d09347e0c766?auto=format&fit=crop&w=600&q=80'); }
+
+        footer {
+            background-color: #222;
+            color: #888;
+            text-align: center;
+            padding: 30px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>AOFMOKA</h1>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="hero-content">
+            <h2>We Are Live</h2>
+            <p>Aofmoka.com is currently under construction.</p>
+            <button onclick="alert('Coming Soon!')">Contact Us</button>
+        </div>
+    </div>
+
+    <div class="banner-grid">
+        <div class="small-banner banner-1">New Collection</div>
+        <div class="small-banner banner-2">Trending</div>
+        <div class="small-banner banner-3">Sale</div>
+    </div>
+
+    <footer>
+        &copy; 2024 Aofmoka.com. All rights reserved.
+    </footer>
+
+</body>
+</html>
