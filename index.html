@@ -3,125 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOFMOKA - Welcome</title>
+    <title>AOFMOKA | Modern Lifestyle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Simple, clean styling */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
+        :root { --primary: #000; --accent: #ff4500; --bg: #ffffff; --gray: #f4f4f4; }
+        body { font-family: 'Inter', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        
         /* Navigation */
-        nav {
-            background-color: #111;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav h1 { margin: 0; letter-spacing: 2px; font-weight: 300; }
+        nav { background: var(--bg); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
 
-        /* Main Hero Banner */
-        .hero-banner {
-            background-color: #333; 
-            /* Placeholder Image - You can replace this URL later */
-            background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 0px 2px 10px rgba(0,0,0,0.6);
-        }
-        .hero-content {
-            text-align: center;
-            background: rgba(0,0,0,0.4);
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .hero-content h2 { font-size: 3rem; margin: 0 0 15px 0; }
-        .hero-content button {
-            padding: 12px 30px;
-            font-size: 1rem;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .hero-content button:hover { background-color: #e03e00; }
+        /* Long Landing Sections */
+        section { padding: 80px 5%; }
+        
+        /* 1. HERO SECTION */
+        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80'); 
+                height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .hero-text h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 5px; }
+        .btn { background: var(--accent); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; transition: 0.3s; }
+        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
 
-        /* Banner Grid */
-        .banner-grid {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 40px 20px;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            justify-content: center;
-        }
-        .small-banner {
-            flex: 1 1 300px; /* Responsive flex */
-            height: 250px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .small-banner:hover { transform: translateY(-5px); }
+        /* 2. DYNAMIC BANNERS GRID */
+        .banners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .banner-item { height: 400px; position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; }
+        .banner-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .banner-item:hover img { transform: scale(1.1); }
+        .banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: flex-end; padding: 30px; color: white; }
+        .banner-overlay h3 { font-size: 1.5rem; margin: 0; }
 
-        /* Placeholder Colors for Small Banners */
-        .banner-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80'); }
-        .banner-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80'); }
-        .banner-3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1558655146-d09347e0c766?auto=format&fit=crop&w=600&q=80'); }
+        /* 3. FEATURES SECTION */
+        .features { background: var(--gray); text-align: center; }
+        .feat-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; margin-top: 50px; }
+        .feat-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
 
-        footer {
-            background-color: #222;
-            color: #888;
-            text-align: center;
-            padding: 30px;
-            margin-top: auto;
-        }
+        /* 4. FOOTER */
+        footer { background: #111; color: #888; text-align: center; padding: 50px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <h1>AOFMOKA</h1>
+        <div class="logo">AOFMOKA</div>
+        <div>
+            <a href="#about" style="margin-right:20px; text-decoration:none; color:#000;">About</a>
+            <a href="#contact" class="btn" style="padding:10px 20px;">Contact</a>
+        </div>
     </nav>
 
-    <div class="hero-banner">
-        <div class="hero-content">
-            <h2>We Are Live</h2>
-            <p>Aofmoka.com is currently under construction.</p>
-            <button onclick="alert('Coming Soon!')">Contact Us</button>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>AOFMOKA</h1>
+            <p style="font-size:1.2rem;">Elevating Your Daily Lifestyle with Precision</p><br>
+            <a href="#explore" class="btn">Explore Collection</a>
         </div>
-    </div>
+    </section>
 
-    <div class="banner-grid">
-        <div class="small-banner banner-1">New Collection</div>
-        <div class="small-banner banner-2">Trending</div>
-        <div class="small-banner banner-3">Sale</div>
-    </div>
+    <section id="explore">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:50px;">New Arrivals</h2>
+        <div class="banners-grid">
+            <div class="banner-item">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Banners">
+                <div class="banner-overlay"><h3>Minimalist Watch</h3></div>
+            </div>
+            <div class="banner-item">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Banners">
+                <div class="banner-overlay"><h3>Premium Audio</h3></div>
+            </div>
+            <div class="banner-item">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Banners">
+                <div class="banner-overlay"><h3>Sport Essence</h3></div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        &copy; 2024 Aofmoka.com. All rights reserved.
+    <section class="features">
+        <div class="feat-grid">
+            <div class="feat-card">
+                <i class="fas fa-truck"></i>
+                <h3>Free Shipping</h3>
+                <p>On all orders over $100</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Payments</h3>
+                <p>100% Secure SSL encrypted checkout</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-undo"></i>
+                <h3>Easy Returns</h3>
+                <p>30-day money back guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="max-width:800px; margin:0 auto; text-align:center;">
+        <h2>Crafted for Quality</h2>
+        <p>AOFMOKA was founded on the principle that modern essentials should be both beautiful and durable. We spend months sourcing materials and testing prototypes to ensure every piece we release meet our rigorous standards.</p>
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:10px; margin-top:30px;">
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 AOFMOKA. Designed with precision.</p>
+        <div style="margin-top:20px;">
+            <i class="fab fa-instagram" style="font-size:1.5rem; margin:0 10px;"></i>
+            <i class="fab fa-facebook" style="font-size:1.5rem; margin:0 10px;"></i>
+        </div>
     </footer>
 
 </body>
