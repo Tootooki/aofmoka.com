@@ -3,111 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOFMOKA | Modern Lifestyle</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>AOFMOKA | Lifestyle & Tech</title>
     <style>
-        :root { --primary: #000; --accent: #ff4500; --bg: #ffffff; --gray: #f4f4f4; }
-        body { font-family: 'Inter', sans-serif; margin: 0; color: #333; line-height: 1.6; }
-        
+        :root { --primary: #000; --white: #fff; --gray: #f5f5f7; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--white); overflow-x: hidden; }
+
         /* Navigation */
-        nav { background: var(--bg); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
 
-        /* Long Landing Sections */
-        section { padding: 80px 5%; }
+        /* Big Hero Banner */
+        .hero { height: 80vh; background: #000 url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: var(--white); text-align: center; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 15px; }
+        .btn { padding: 12px 30px; background: var(--white); color: #000; text-decoration: none; border-radius: 25px; font-weight: 600; }
+
+        /* Section Headlines */
+        .section-header { padding: 60px 5% 20px; font-size: 1.8rem; font-weight: 600; }
+
+        /* Product Horizontal Scroller */
+        .product-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 20px 5%; scrollbar-width: none; /* Hide scrollbar Firefox */ }
+        .product-slider::-webkit-scrollbar { display: none; /* Hide scrollbar Chrome/Safari */ }
         
-        /* 1. HERO SECTION */
-        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80'); 
-                height: 90vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-        .hero-text h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 5px; }
-        .btn { background: var(--accent); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; transition: 0.3s; }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
+        .product-card { flex: 0 0 280px; scroll-snap-align: start; background: var(--gray); border-radius: 15px; padding: 15px; transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-card img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+        .product-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .product-card span { color: #666; font-weight: 500; }
 
-        /* 2. DYNAMIC BANNERS GRID */
-        .banners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .banner-item { height: 400px; position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; }
-        .banner-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .banner-item:hover img { transform: scale(1.1); }
-        .banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: flex-end; padding: 30px; color: white; }
-        .banner-overlay h3 { font-size: 1.5rem; margin: 0; }
+        /* Large Secondary Banner */
+        .large-banner { height: 60vh; width: 100%; margin: 40px 0; background-size: cover; background-position: center; display: flex; align-items: center; padding: 0 5%; color: var(--white); }
+        .banner-2 { background-image: linear-gradient(to right, rgba(0,0,0,0.6), transparent), url('https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=1600&q=80'); }
+        .banner-3 { background-image: linear-gradient(to right, rgba(0,0,0,0.6), transparent), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1600&q=80'); }
 
-        /* 3. FEATURES SECTION */
-        .features { background: var(--gray); text-align: center; }
-        .feat-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; margin-top: 50px; }
-        .feat-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
-
-        /* 4. FOOTER */
-        footer { background: #111; color: #888; text-align: center; padding: 50px; }
+        footer { background: #000; color: #888; text-align: center; padding: 60px 0; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">AOFMOKA</div>
-        <div>
-            <a href="#about" style="margin-right:20px; text-decoration:none; color:#000;">About</a>
-            <a href="#contact" class="btn" style="padding:10px 20px;">Contact</a>
-        </div>
+        <a href="#" class="btn" style="background:#000; color:#fff; font-size: 0.9rem;">Shop All</a>
     </nav>
 
     <section class="hero">
-        <div class="hero-text">
-            <h1>AOFMOKA</h1>
-            <p style="font-size:1.2rem;">Elevating Your Daily Lifestyle with Precision</p><br>
-            <a href="#explore" class="btn">Explore Collection</a>
+        <div class="hero-content">
+            <h1>Tomorrow's Tech.</h1>
+            <p style="margin-bottom: 25px;">The new winter collection has arrived.</p>
+            <a href="#" class="btn">Explore Now</a>
         </div>
     </section>
 
-    <section id="explore">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:50px;">New Arrivals</h2>
-        <div class="banners-grid">
-            <div class="banner-item">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Banners">
-                <div class="banner-overlay"><h3>Minimalist Watch</h3></div>
-            </div>
-            <div class="banner-item">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Banners">
-                <div class="banner-overlay"><h3>Premium Audio</h3></div>
-            </div>
-            <div class="banner-item">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Banners">
-                <div class="banner-overlay"><h3>Sport Essence</h3></div>
-            </div>
+    <h2 class="section-header">Featured Arrivals</h2>
+    <div class="product-slider">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Modern Watch</h3><span>$199</span>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Sprint Shoes</h3><span>$120</span>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Classic Cam</h3><span>$450</span>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Shade Lens</h3><span>$85</span>
+        </div>
+    </div>
+
+    <section class="large-banner banner-2">
+        <div style="max-width: 500px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">A New Experience</h2>
+            <p style="margin-bottom: 20px;">Design meets utility in our latest collection of essentials.</p>
+            <a href="#" class="btn">Learn More</a>
         </div>
     </section>
 
-    <section class="features">
-        <div class="feat-grid">
-            <div class="feat-card">
-                <i class="fas fa-truck"></i>
-                <h3>Free Shipping</h3>
-                <p>On all orders over $100</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-lock"></i>
-                <h3>Secure Payments</h3>
-                <p>100% Secure SSL encrypted checkout</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-undo"></i>
-                <h3>Easy Returns</h3>
-                <p>30-day money back guarantee</p>
-            </div>
+    <h2 class="section-header">Best Sellers</h2>
+    <div class="product-slider">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Studio Audio</h3><span>$299</span>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1546868889-4e0c6819757c?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Series 2 Watch</h3><span>$349</span>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1585333127302-3f26978b609a?auto=format&fit=crop&w=500&q=80" alt="Product">
+            <h3>Home Essentials</h3><span>$45</span>
+        </div>
+    </div>
+
+    <section class="large-banner banner-3">
+        <div style="max-width: 500px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Sound redefined.</h2>
+            <p style="margin-bottom: 20px;">Limited edition noise-canceling headsets.</p>
+            <a href="#" class="btn">Pre-Order</a>
         </div>
     </section>
 
-    <section id="about" style="max-width:800px; margin:0 auto; text-align:center;">
-        <h2>Crafted for Quality</h2>
-        <p>AOFMOKA was founded on the principle that modern essentials should be both beautiful and durable. We spend months sourcing materials and testing prototypes to ensure every piece we release meet our rigorous standards.</p>
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:10px; margin-top:30px;">
-    </section>
-
-    <footer id="contact">
-        <p>&copy; 2024 AOFMOKA. Designed with precision.</p>
-        <div style="margin-top:20px;">
-            <i class="fab fa-instagram" style="font-size:1.5rem; margin:0 10px;"></i>
-            <i class="fab fa-facebook" style="font-size:1.5rem; margin:0 10px;"></i>
-        </div>
+    <footer>
+        <p>&copy; 2024 AOFMOKA. All Rights Reserved.</p>
     </footer>
 
 </body>
