@@ -1,66 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Amazon Showcase</title>
+    <title>Aofmoka Store</title>
     <style>
-        :root { --amz-orange: #FF9900; --amz-navy: #232F3E; --bg: #eaeded; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: 0.2s; }
-        .card:hover { transform: scale(1.02); }
-        .img-container { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
-        img { max-height: 100%; max-width: 100%; object-fit: contain; }
-        h3 { font-size: 14px; height: 40px; overflow: hidden; color: #007185; margin: 10px 0; }
-        .price { font-size: 21px; font-weight: bold; color: #333; margin-bottom: 10px; }
-        .price::before { content: '$'; font-size: 12px; vertical-align: top; margin-right: 2px; }
-        .btn { background: var(--amz-orange); border: none; padding: 10px; border-radius: 20px; cursor: pointer; text-align: center; text-decoration: none; color: black; font-size: 13px; font-weight: 500; }
-        .btn:hover { background: #e68a00; }
+        body { margin: 0; padding: 0; overflow: hidden; }
+        iframe { border: none; width: 100%; height: 100vh; }
     </style>
 </head>
 <body>
-
-<div class="grid" id="product-grid"></div>
-
-<script>
-    // EDIT THIS SECTION: Add Title, Price, and Image Link for each ASIN
-    const productData = {
-        "B07PG2STJM": { title: "Example Product 1", price: "29.99", img: "https://m.media-amazon.com/images/I/71...JPG" },
-        "B07SC29PTY": { title: "Example Product 2", price: "45.00", img: "https://m.media-amazon.com/images/I/61...JPG" },
-        // Add more here following the same format
-    };
-
-    const asins = [
-        "B07PG2STJM", "B07SC29PTY", "B07SFM8NFB", "B07S9XTNQ", "B071KN23D8", 
-        "B071KND88W", "B071H2KYM5", "B07B3VWWGC", "B07S9XBV52", "B07S9WXXGM",
-        "B07S9WRT9C", "B07PH79HD7", "B07S9XJNNZ", "B07K3158CZ", "B07K2ZH8K5",
-        "B071H2FYKB", "B07B2ZZMT3", "B07K6QHBLZ", "B07SD531Y3", "B07S9XFXD1",
-        "B082XK4B4F", "B07S8VYWF4", "B082Z9Q91K", "B07S8VJ98K", "B07S9Y7JPS",
-        "B07PKCM37Z", "B082Z9RDN4", "B082ZB89KP", "B082ZBP9SJ", "B082ZBGRL7",
-        "B071F86Z29", "B07B3KQJ1M", "B071KN23DH", "B07S8W3ZQS", "B071XLLPCL",
-        "B082ZBKXMX", "B07K2XGYLX", "B07PG2R7FS", "B07S7VNZ73", "B07K2YN1VP",
-        "B07K2YFDDT", "B0FLW8NJMX", "B0FLW95CB8", "B0G469F2CB", "B0G46G799R",
-        "B0G46P2Q44", "B0G46JL4MG", "B0G46L4CTG", "B0G46LWZS3", "B0G46GBMDP",
-        "B0G46DMH7H", "B0G46H4MF1", "B0G47BLW6R"
-    ];
-
-    const grid = document.getElementById('product-grid');
-
-    asins.forEach(asin => {
-        const data = productData[asin] || { title: "Amazon Product", price: "0.00", img: "https://via.placeholder.com/200" };
-        
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <div class="img-container"><img src="${data.img}" alt="Product"></div>
-            <h3>${data.title}</h3>
-            <div class="price">${data.price}</div>
-            <a href="https://www.amazon.com/dp/${asin}" class="btn" target="_blank">View on Amazon</a>
-        `;
-        grid.appendChild(card);
-    });
-</script>
-
+    <iframe src="https://www.amazon.com/aofmoka"></iframe>
 </body>
 </html>
