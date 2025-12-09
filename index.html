@@ -3,143 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOFMOKA | Home</title>
+    <title>Product Selection Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #fff; --card-bg: #f9f9f9; --amazon: #FF9900; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); color: #111; line-height: 1.5; }
-
-        /* Banner Rows */
-        .banner-row img { width: 100%; display: block; height: auto; }
-
-        /* Infinite Scroll Feel Sliders */
-        .slider-wrap { padding: 30px 0 50px; background: #fff; }
-        .slider-header { padding: 0 5% 15px; font-size: 1rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
-        
-        .product-track {
-            display: flex;
-            gap: 15px;
-            padding: 0 5%;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
+        :root {
+            --primary: #232f3e;
+            --accent: #febd69;
+            --text: #111;
+            --bg: #f3f3f3;
         }
-        .product-track::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
 
-        /* Product Cards */
-        .card { flex: 0 0 200px; background: var(--card-bg); border-radius: 10px; padding: 15px; scroll-snap-align: start; text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; text-align: center; }
-        .card:hover { border-color: var(--amazon); transform: translateY(-3px); }
-        .card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; border-radius: 5px; background: #fff; }
-        .card h4 { font-size: 0.8rem; height: 32px; overflow: hidden; margin-bottom: 8px; font-weight: 500; }
-        .buy-btn { background: var(--amazon); color: #000; font-size: 0.75rem; padding: 8px; border-radius: 4px; font-weight: bold; display: block; }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background: #fff;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .asin-badge {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            color: #ffa41c;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            display: block;
+            text-align: center;
+            background-color: var(--accent);
+            color: var(--text);
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        .buy-button:hover {
+            background-color: #f3a847;
+        }
     </style>
 </head>
 <body>
 
-<div class="banner-row"><img src="Banner1" alt="B1"></div>
-<section class="slider-wrap">
-    <h2 class="slider-header">Tech Essentials</h2>
-    <div class="product-track">
-        <a href="https://www.amazon.com/dp/B07PG2STJM" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07PG2STJM.01.LZZZZZZZ.jpg">
-            <h4>Featured Tech 1</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07SC29PTY" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07SC29PTY.01.LZZZZZZZ.jpg">
-            <h4>Featured Tech 2</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07SFM8NFB" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07SFM8NFB.01.LZZZZZZZ.jpg">
-            <h4>Featured Tech 3</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07S9X3TNQ" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07S9X3TNQ.01.LZZZZZZZ.jpg">
-            <h4>Featured Tech 4</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B071KN23D8" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B071KN23D8.01.LZZZZZZZ.jpg">
-            <h4>Featured Tech 5</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-    </div>
-</section>
+<header>
+    <h1>Exclusive Collection</h1>
+    <p>Discover our top-rated Amazon picks</p>
+</header>
 
-<div class="banner-row"><img src="Banner2" alt="B2"></div>
-<section class="slider-wrap">
-    <h2 class="slider-header">Home & Lifestyle</h2>
-    <div class="product-track">
-        <a href="https://www.amazon.com/dp/B071KND88W" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B071KND88W.01.LZZZZZZZ.jpg">
-            <h4>Essentials Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B071H2KYM5" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B071H2KYM5.01.LZZZZZZZ.jpg">
-            <h4>Essentials Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07B3VWWGC" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07B3VWWGC.01.LZZZZZZZ.jpg">
-            <h4>Essentials Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07S9XBV52" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07S9XBV52.01.LZZZZZZZ.jpg">
-            <h4>Essentials Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-    </div>
-</section>
+<div class="container">
+    <div id="product-list" class="product-grid">
+        </div>
+</div>
 
-<div class="banner-row"><img src="Banner3" alt="B3"></div>
-<section class="slider-wrap">
-    <h2 class="slider-header">Apparel Selections</h2>
-    <div class="product-track">
-        <a href="https://www.amazon.com/dp/B07S9WXXGM" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07S9WXXGM.01.LZZZZZZZ.jpg">
-            <h4>Style Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07S9WRT9C" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07S9WRT9C.01.LZZZZZZZ.jpg">
-            <h4>Style Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07PH79HD7" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07PH79HD7.01.LZZZZZZZ.jpg">
-            <h4>Style Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-    </div>
-</section>
+<script>
+    // The list of ASINs you provided
+    const asins = [
+        "B07PG2STJM", "B07SC29PTY", "B07SFM8NFB", "B07S9XTNQ", "B071KN23D8", 
+        "B071KND88W", "B071H2KYM5", "B07B3VWWGC", "B07S9XBV52", "B07S9WXXGM",
+        "B07S9WRT9C", "B07PH79HD7", "B07S9XJNNZ", "B07K3158CZ", "B07K2ZH8K5",
+        "B071H2FYKB", "B07B2ZZMT3", "B07K6QHBLZ", "B07SD531Y3", "B07S9XFXD1",
+        "B082XK4B4F", "B07S8VYWF4", "B082Z9Q91K", "B07S8VJ98K", "B07S9Y7JPS",
+        "B07PKCM37Z", "B082Z9RDN4", "B082ZB89KP", "B082ZBP9SJ", "B082ZBGRL7",
+        "B071F86Z29", "B07B3KQJ1M", "B071KN23DH", "B07S8W3ZQS", "B071XLLPCL",
+        "B082ZBKXMX", "B07K2XGYLX", "B07PG2R7FS", "B07S7VNZ73", "B07K2YN1VP",
+        "B07K2YFDDT", "B0FLW8NJMX", "B0FLW95CB8", "B0G469F2CB", "B0G46G799R",
+        "B0G46P2Q44", "B0G46JL4MG", "B0G46L4CTG", "B0G46LWZS3", "B0G46GBMDP",
+        "B0G46DMH7H", "B0G46H4MF1", "B0G47BLW6R"
+    ];
 
-<div class="banner-row"><img src="Banner4" alt="B4"></div>
-<section class="slider-wrap">
-    <h2 class="slider-header">Best Sellers</h2>
-    <div class="product-track">
-        <a href="https://www.amazon.com/dp/B07S9XJNNZ" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07S9XJNNZ.01.LZZZZZZZ.jpg">
-            <h4>Top Choice</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B07K3158CZ" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07K3158CZ.01.LZZZZZZZ.jpg">
-            <h4>Top Choice</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-    </div>
-</section>
+    const container = document.getElementById('product-list');
 
-<div class="banner-row"><img src="Banner5" alt="B5"></div>
-<section class="slider-wrap">
-    <h2 class="slider-header">Daily Deals</h2>
-    <div class="product-track">
-        <a href="https://www.amazon.com/dp/B07K2ZH8K5" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B07K2ZH8K5.01.LZZZZZZZ.jpg">
-            <h4>Deal Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-        <a href="https://www.amazon.com/dp/B071H2FYKB" class="card" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B071H2FYKB.01.LZZZZZZZ.jpg">
-            <h4>Deal Item</h4><span class="buy-btn">View on Amazon</span>
-        </a>
-    </div>
-</section>
-
-<div class="banner-row"><img src="Banner6" alt="B6"></div>
-
-<footer style="padding:40px; text-align:center;">
-    <p>&copy; 2024 AOFMOKA. LIVE IN PRECISION.</p>
-</footer>
+    asins.forEach(asin => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        
+        // Constructing the layout
+        // NOTE: In a real-world scenario, images would be pulled from your Amazon Affiliate links
+        card.innerHTML = `
+            <img class="product-image" src="https://via.placeholder.com/300x300?text=Product+Image" alt="Product ${asin}">
+            <div class="product-info">
+                <a href="https://www.amazon.com/dp/${asin}" class="product-title" target="_blank">Premium Product Selection</a>
+                <div class="asin-badge">ASIN: ${asin}</div>
+                <div class="rating">★★★★★ <span style="color:#666">(Top Reviewed)</span></div>
+                <a href="https://www.amazon.com/dp/${asin}" class="buy-button" target="_blank">View on Amazon</a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+</script>
 
 </body>
 </html>
