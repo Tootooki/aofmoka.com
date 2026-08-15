@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AOFMOKA — Wear the Impossible</title>
+    <meta name="description" content="Explore AOFMOKA UV-reactive wearable art and purchase the exact design securely on Amazon." />
+    <link rel="canonical" href="https://aofmoka.com/" />
+    <meta property="og:title" content="AOFMOKA — Wear the Impossible" />
+    <meta property="og:description" content="UV-reactive wearable art. Explore the collection and shop the exact design on Amazon." />
+    <meta property="og:url" content="https://aofmoka.com/" />
+    <meta property="og:image" content="https://aofmoka.com/og.png" />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css?v=21" />
+    <link rel="stylesheet" href="./dock.css?v=8" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="header-bar" href="#top" aria-label="AOFMOKA home">
+        <span class="header-logo"><img src="./brand/aofmoka-color-symbols-no-text.png" alt="AOFMOKA" /></span>
+      </a>
+    </header>
 
-<head>
-    <meta http-equiv="refresh"
-        content="0; url=https://amazon.com/aofmoka?maas=maas_adg_BB79A945F56B216408CF5CDD520DC489_afap_abs&ref_=aa_maas&tag=maas">
-    <title>Redirecting to Aofmoka Store...</title>
-    <script>
-        window.location.href = "https://amazon.com/aofmoka?maas=maas_adg_BB79A945F56B216408CF5CDD520DC489_afap_abs&ref_=aa_maas&tag=maas";
-    </script>
-</head>
+    <main id="top">
+      <section class="collection" id="collection" aria-label="AOFMOKA product collection">
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
 
-<body>
-    <p>If you are not redirected automatically, follow this <a
-            href="https://amazon.com/aofmoka?maas=maas_adg_BB79A945F56B216408CF5CDD520DC489_afap_abs&ref_=aa_maas&tag=maas">link
-            to the Aofmoka Amazon Store</a>.</p>
-</body>
+    <div class="product-size-dock">
+      <div id="aofmoka-size-panel" class="product-size-panel product-size-panel-closed" role="dialog" aria-label="Amazon sizes" aria-hidden="true" hidden></div>
+    </div>
 
+    <script src="./products.js?v=6"></script>
+    <script src="./app.js?v=21"></script>
+  </body>
 </html>
